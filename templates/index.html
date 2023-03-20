@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<section class="bg-gray-300/25 rounded-xl dark:bg-gray-900 mb-4 min-h-screen ">
+   
+
+    <div  class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center my-auto ">
+        <div class="w-full lg:w-1/2">
+            <div class="lg:max-w-lg">
+                <h1 class="text-5xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-5xl">
+                    Your One Step Can Save Many
+                    <span class="relative inline-block px-2">
+                        <div class="absolute inset-0 transform -skew-x-12 bg-teal-400 top-4"></div>
+                        <span class="relative text-teal-700 top-1">Families</span>
+                      </span>
+                </h1>
+
+                <div class="mt-8 space-y-5">
+                    <p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+
+                        <span class="mx-2 text-xl font-semibold">Be a warrior, Not a worrier</span>
+                    </p>
+
+                    <p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+
+                        <span class="mx-2 text-xl font-semibold">Stop > Look > Report</span>
+                    </p>
+
+                    <p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+
+                        <span class="mx-2  text-xl font-semibold">Get Honoured </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full mt-8 bg-transparent  rounded-md lg:max-w-sm dark:border-gray-700 focus-within:border-red-400 focus-within:ring focus-within:ring-red-300 dark:focus-within:border-red-400 focus-within:ring-opacity-40 border-2 border-red-800">
+                <form class="flex flex-col lg:flex-row">
+                    <input type="email" placeholder="Just Enter your Aadhar Card Number" class="flex-1 h-10 px-4 py-2 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0 placeholder:text-xl placeholder:font-semibold  " />
+
+                    <button type="button" class="h-10 m-1 text-white transition-colors duration-300 transform bg-red-500 rounded-md hover:bg-red-400 focus:outline-none focus:bg-red-400 border-2 border-red-800 px-4">
+                        Authenticate
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full h-96  mx-auto lg:w-1/2 ">
+            <img class="object-cover w-full h-full mx-auto rounded-2xl lg:max-w-2xl shadow-md shadow-black/50" src="{{ url_for('static', filename = 'images/bg.png' ) }}" alt="glasses photo">
+        </div>
+    </div>
+</section>
+
+
+    
+{% endblock body %}

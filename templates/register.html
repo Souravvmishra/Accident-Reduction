@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind</title>
+  <link rel="stylesheet" href="{{ url_for('static' ,filename = './css/main.css') }}">
+</head>
+
+<body class="flex justify-center items-center min-h-screen">
+
+
+
+
+
+  <div class="shadow-xl p-10 bg-white max-w-xl rounded">
+    <form id="register-form" action="/register-user" method="POST">
+      <h1 class="text-3xl font-black mb-8">Register Here ⬇️ </h1>
+
+
+      <div class="mb-4 relative">
+        <input
+          class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 peer"
+          id="email" type="text" placeholder="Full Name" name="fullName" required>
+      </div>
+
+      <div class="mb-4 relative">
+        <input
+          class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 peer"
+          id="email" type="email" placeholder="E-Mail" name="email" required>
+      </div>
+
+      <div class="mb-4 relative">
+        <input
+          class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 peer"
+          id="email" type="number" placeholder="Phone Number" name="phNumber" required>
+      </div>
+
+
+      <div class="mb-4 relative">
+        <input
+          class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+          id="password" type="password" placeholder="Password" name="password" required>
+      </div>
+      
+      
+      <h3 id="message" class="text-base font-semibold mb-4 w-full text-red-900 "></h3>
+      
+
+
+
+
+      <button
+        class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-2 px-6 rounded min-w-full text-xl">Submit</button>
+
+        
+        
+    </form>
+  </div>
+
+
+
+  <script>
+    const form = document.getElementById('register-form');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // prevent the default form submission behavior
+      message = document.getElementById("message")
+
+      const formData = new FormData(form); // create a FormData object from the form data
+
+      fetch('/register', {
+        method: 'POST', // specify the HTTP method as POST
+        body: formData // send the form data in the request body
+      })
+        .then(response => {
+          if (response.ok) {
+            // if response is successful, do something
+            message.
+            console.log('Success! Response status:', response.status);
+          } else {
+            // if response is not successful, throw an error
+            throw new Error('Network response was not ok');
+          }
+        })
+        .catch(error => {
+          // handle errors here, e.g. display an error message
+          console.error('Error:', error);
+        });
+    });
+
+  </script>
+
+
+
+
+</body>
+
+</html>
