@@ -66,14 +66,22 @@ def index():
 def cards():
     return render_template("cards.html")
 
-@app.route("/raise-issue")
+@app.route("/feedback")
 def raise_issue():
-    return render_template("issue.html")
+    return render_template("feedback.html")
 
 
 @app.route("/report-accident")
 def accident():
     return render_template("accident.html")
+
+@app.route("/contacts")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 if __name__ == '__main__':
