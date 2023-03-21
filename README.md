@@ -16,7 +16,22 @@ It also provides a phone number service where a user can report just by giving m
 ## Features
 
 - One Tap Report Of Accident
-- Live previews
-- Fullscreen mode
-- Cross platform
+- Report Using Missed Call
+- Simultaneous Report To Police, Ambulance & Other Concerned Authorities
+- Different Types Of Forms Available
+- Raise Issue, Report Accident, Feedback Form Available
+- Aadhar Authentication
+
+
+
+## Demo
+
+[Website Is Live Here](http://souravvvmishra.pythonanywhere.com/)
+
+
+## Tech Stack
+
+**Client:** Tailwind CSS, Javascript
+
+**Server:** Flask, Javascript
 
