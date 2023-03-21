@@ -6,7 +6,7 @@
 
 
     <div
-        class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center my-auto ">
+        class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:flex-wrap lg:items-center my-auto ">
         <div class="w-full lg:w-1/2">
             <div class="lg:max-w-lg">
                 <h1 class="text-5xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-5xl">
@@ -53,11 +53,11 @@
             <div
                 class="w-full mt-8 bg-transparent  rounded-md lg:max-w-sm dark:border-gray-700 focus-within:border-red-400 focus-within:ring focus-within:ring-red-300 dark:focus-within:border-red-400 focus-within:ring-opacity-40 border-2 border-red-800">
                 <form action="/cards" class="flex flex-col lg:flex-row">
-                    <input type="email" placeholder="Just Enter your Aadhar Card Number"
-                        class="flex-1 h-10 px-4 py-2 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0 placeholder:text-xl placeholder:font-semibold  " />
+                    <input id="aadhar-num" required type="Number"  placeholder="Aadhar Card Number"
+                        class="flex-1 h-10 px-4 py-2 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0 placeholder:text-xl placeholder:font-semibold  "  />
 
 
-                    <button
+                    <button id="auth-btn"
                         class="h-10 m-1 text-white transition-colors duration-300 transform bg-red-500 rounded-md hover:bg-red-400 focus:outline-none focus:bg-red-400 border-2 border-red-800 px-4">
 
                         Authenticate
@@ -67,9 +67,8 @@
 
                 </form>
             </div>
-        </div>
 
-        <div class="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+        <div class="lg:w-1/2 flex mt-8 p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
             role="alert">
             <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -84,6 +83,57 @@
                 Continue.
             </div>
         </div>
+        </div>
+
+
+
+        <div class="lg:w-1/2 w-full my-0 px-4 relative z-1 bg-gray-100 rounded-xl shadow-lg overflow-hidden">
+        <div class="text-lg  text-red-500 uppercase p-8 text-center border-b border-gray-200 tracking-wide font-semibold">Why Is Road Safety Important</div>
+        <div class="block sm:flex md:block lg:flex items-center justify-center">
+          <div class="mt-8 sm:m-8 md:m-0 md:mt-8 lg:m-8 text-center">
+            <div class="inline-flex items-center">
+              <span class="text-3xl font-medium">12.6%</span>
+              <span class="text-xl text-gray-600 ml-2">+</span>
+              <span class="text-xl ml-2">2021</span>
+            </div>
+            <span class="block text-sm text-gray-600 mt-2">Road Accidents</span>
+          </div>
+          <div class="mt-4 mb-8 sm:m-8 md:m-0 md:mt-4 md:mb-8 lg:m-8 text-center">
+            <div class="inline-flex items-center">
+              <span class="text-3xl font-medium">16.9%</span>
+              <span class="text-xl text-gray-600 ml-2">+</span>
+              <span class="text-xl ml-2">2021</span>
+            </div>
+            <span class="block text-sm text-gray-600 mt-2">Number Of Death</span>
+          </div>
+        </div>
+        <div class="flex justify-center mt-3">
+          <ul>
+            <li class="flex items-center">
+              <div class="bg-green-200 rounded-full p-2 fill-current text-green-700">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-umbrella"><path class="primary" d="M11 3.05V2a1 1 0 0 1 2 0v1.05A10 10 0 0 1 22 13c0 1.33-2 1.33-2 0a2 2 0 1 0-4 0c0 1.33-2 1.33-2 0a2 2 0 1 0-4 0c0 1.33-2 1.33-2 0a2 2 0 1 0-4 0c0 1.33-2 1.33-2 0a10 10 0 0 1 9-9.95z"/><path class="blue" d="M11 14a1 1 0 0 1 2 0v5a3 3 0 0 1-6 0 1 1 0 0 1 2 0 1 1 0 0 0 2 0v-5z"/></svg>
+              </div>
+              <span class="text-gray-700 text-lg ml-3">Witnessed 412432 Road Accident in 2021</span>
+            </li>
+            <li class="flex items-center mt-3">
+              <div class="bg-green-200 rounded-full p-2 fill-current text-green-700">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-shopping-bag"><path class="primary" d="M5 8h14a1 1 0 0 1 1 .92l1 12A1 1 0 0 1 20 22H4a1 1 0 0 1-1-1.08l1-12A1 1 0 0 1 5 8z"/><path class="secondary" d="M9 10a1 1 0 0 1-2 0V7a5 5 0 1 1 10 0v3a1 1 0 0 1-2 0V7a3 3 0 0 0-6 0v3z"/></svg>
+              </div>
+              <span class="text-gray-700 text-lg ml-3">Killing 15972 As Per Latest</span>
+            </li>
+            <li class="flex items-center mt-3">
+              <div class="bg-green-200 rounded-full p-2 fill-current text-green-700">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-pie-chart"><path class="primary" d="M14 13h6.78a1 1 0 0 1 .97 1.22A10 10 0 1 1 9.78 2.25a1 1 0 0 1 1.22.97V10a3 3 0 0 0 3 3z"/><path class="secondary" d="M20.78 11H14a1 1 0 0 1-1-1V3.22a1 1 0 0 1 1.22-.97c3.74.85 6.68 3.79 7.53 7.53a1 1 0 0 1-.97 1.22z"/></svg>
+              </div>
+              <span class="text-gray-700 text-lg ml-3">Real-time reporting</span>
+            </li>
+          </ul>
+        </div>
+        <div id="auth-btn2" class=" flex items-center justify-center bg-gray-200 hover:bg-red-500 p-8 text-md font-semibold text-gray-800 uppercase mt-16 group duration-300 -mx-4" >
+          <span class="text-red-500 group-hover:text-white text-2xl">Get Authenticated</span>
+          <span class="font-medium text-red-500 group-hover:text-white  ml-2">➔</span>
+        </div>
+      </div>
 
 
 
@@ -94,6 +144,30 @@
         </div>
     </div>
 </section>
+
+<script>
+
+    $("#auth-btn2").click(function (e) { 
+        e.preventDefault();
+        $("#aadhar-num").focus()
+
+        
+    });
+
+    $("#auth-btn").click(function(e) {
+      const aadhar = $("#aadhar-num").val()
+      if (aadhar.length !== 12) {
+        alert("Enter Correct Number")
+        e.preventDefault();
+
+      }
+      
+      
+    })
+
+    
+
+</script>
 
 
 

@@ -58,8 +58,10 @@ def register():
 
 
 
-@app.route("/")
+@app.route("/", methods = ["POST", "GET"])
 def index():
+    # if request.method == "POST":
+    #     aadharNum = request.form.get()
     return render_template("index.html")
 
 @app.route("/cards")
@@ -67,11 +69,11 @@ def cards():
     return render_template("cards.html")
 
 @app.route("/feedback")
-def raise_issue():
+def feedback():
     return render_template("feedback.html")
 
 
-@app.route("/report-accident")
+@app.route("/report-accident", methods = ["POST", "GET"])
 def accident():
     return render_template("accident.html")
 
@@ -82,6 +84,15 @@ def contact():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+@app.route("/raise-issue")
+def raise_issue():
+    return render_template("issue.html")
+
+@app.route("/report-voilation")
+def report_voilation():
+    return render_template("/report-voilation.html")
+
 
 
 if __name__ == '__main__':
