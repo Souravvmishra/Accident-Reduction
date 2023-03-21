@@ -60,8 +60,8 @@ def register():
 
 @app.route("/", methods = ["POST", "GET"])
 def index():
-    # if request.method == "POST":
-    #     aadharNum = request.form.get()
+    if request.method == "POST":
+        aadharNum = request.form.get("aadhar")
     return render_template("index.html")
 
 @app.route("/cards")
