@@ -2,7 +2,7 @@ from flask import Flask, jsonify, render_template, request
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import bcrypt
+import requests
 
 app = Flask(__name__)
 
@@ -27,46 +27,31 @@ Base.metadata.create_all(engine)
 
 
 
-@app.route('/register', methods=['POST', "GET"])
-def register():
-    if request.method == "POST":
-    # Get data from request
-        fullName = request.form.get('fullName')
-        password = request.form.get('password')
-        email = request.form.get('email')
-        phNumber = request.form.get('phNumber')
-        
-        # Hash password
-        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-        
-        # Insert new user into database
-        session = Session()
-        try : 
-            user = User(fullName = fullName,password=hashed_password, email = email,phNumber = phNumber)
-            session.add(user)
-            session.commit()
-        except:
-            session.rollback()
-            return jsonify({'error': 'Username already exists!'}), 409
-        finally:
-            session.close()
-        
-        # Return success message
-        return jsonify({'message': 'User registered successfully!'})
-    else : 
-        return render_template("index.html")
-
 
 
 @app.route("/", methods = ["POST", "GET"])
 def index():
-    if request.method == "POST":
-        aadharNum = request.form.get("aadhar")
     return render_template("index.html")
 
-@app.route("/cards")
+@app.route("/cards", methods = ["POST", "GET"])
 def cards():
-    return render_template("cards.html")
+    if request.method == "POST":
+        aadharNum = request.form.get("aadhar")
+
+        url = "https://alanaktion-faker-v1.p.rapidapi.com/person/%7Bgender%7D"
+
+        querystring = {"locale":"en_US"}
+
+        headers = {
+            "X-RapidAPI-Key": "b4f68bc2c2mshe608a930ef4fc28p185c1djsn645ce3f43579",
+            "X-RapidAPI-Host": "alanaktion-faker-v1.p.rapidapi.com"
+        }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+
+        print(response.text)
+
+        return render_template("cards.html")
 
 @app.route("/feedback")
 def feedback():
