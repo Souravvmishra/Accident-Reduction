@@ -34,24 +34,8 @@ def index():
     return render_template("index.html")
 
 @app.route("/cards", methods = ["POST", "GET"])
-def cards():
-    if request.method == "POST":
-        aadharNum = request.form.get("aadhar")
-
-        url = "https://alanaktion-faker-v1.p.rapidapi.com/person/%7Bgender%7D"
-
-        querystring = {"locale":"en_US"}
-
-        headers = {
-            "X-RapidAPI-Key": "b4f68bc2c2mshe608a930ef4fc28p185c1djsn645ce3f43579",
-            "X-RapidAPI-Host": "alanaktion-faker-v1.p.rapidapi.com"
-        }
-
-        response = requests.request("GET", url, headers=headers, params=querystring)
-
-        print(response.text)
-
-        return render_template("cards.html")
+def cards():    
+    return render_template("cards.html")
 
 @app.route("/feedback")
 def feedback():
